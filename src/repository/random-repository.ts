@@ -1,11 +1,12 @@
+import { RandomPerson } from "../protocols/index";
 import { db } from "../database/database-connection";
 
-export async function getRandom(id: number) {
-    const result = await db.query(`SELECT * FROM people WHERE id=$1`, [id])
-    return result.rows
+export async function getPersonByOrdenation(ordenation: number): Promise<RandomPerson[]> {
+    const result = await db.query<RandomPerson>(`SELECT * FROM people OFFSET $1 LIMIT 1`, [ordenation - 1]);
+    return result.rows;
 }
 
-export async function getLength() {
-    const result = await db.query(`SELECT * FROM people`)
-    return result.rows.length
+export async function getLength(): Promise<number> {
+    const result = await db.query<RandomPerson>(`SELECT * FROM people`);
+    return result.rows.length;
 }
