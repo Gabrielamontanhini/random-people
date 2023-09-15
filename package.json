@@ -11,7 +11,10 @@
     "url": "git+https://github.com/Gabrielamontanhini/random-people.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gabrielamontanhini",
+  "contributors": [
+    "MarkDiasBR"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Gabrielamontanhini/random-people/issues"
