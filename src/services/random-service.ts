@@ -1,5 +1,7 @@
-import { getRandom } from "../repository/random-repository";
+import { getLength, getRandom } from "../repository/random-repository";
 
-export function getRandomPerson(){
-    return getRandom()
+export async function getRandomPerson(){
+    const length = await getLength()
+    const randomId =  Math.floor(Math.random() * length) + 1
+    return getRandom(randomId)
 }
